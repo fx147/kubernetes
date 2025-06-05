@@ -40,6 +40,8 @@ func Resource(resource string) schema.GroupResource {
 
 var (
 	// SchemeBuilder object to register various known types
+	// 这里是因为注册方法可能有三种addKnownTypes addKnownTypesWithName addUnversionedTypes
+	// 所以这里统一注册不同类型的types，Builder本质上就是不同addTypes函数集合
 	SchemeBuilder = runtime.NewSchemeBuilder(addKnownTypes)
 
 	// AddToScheme represents a func that can be used to apply all the registered

@@ -21,6 +21,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime/schema"
 )
 
+// 这里将全局变量localSchemeBuilder指向之前注册v1资源已经创建过的SchemeBuilder
 var (
 	localSchemeBuilder = &v1.SchemeBuilder
 	AddToScheme        = localSchemeBuilder.AddToScheme
